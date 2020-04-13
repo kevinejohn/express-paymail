@@ -55,7 +55,7 @@ const buildGetPaymentDestinationRouter = (config, ifPresent) => {
       const [name, domain] = req.params.paymail.split('@')
       const validateSignature = config.requestSenderValidation
       await validateRequest(req.body, config.paymailClient, validateSignature)
-      const output = await config.getPaymentDestination(name, domain, req.body, helpers)
+      const output = await config.getPaymentDestination(name, domain, req.body, helpers, req)
 
       if (!output) {
         throw new PaymailError(`Paymail not found: ${req.params.paymail}`, HttpStatus.NOT_FOUND, 'not-found')

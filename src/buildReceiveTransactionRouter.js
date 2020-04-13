@@ -18,7 +18,7 @@ const buildReceiveTransactionRouter = (config, ifPresent) => {
         }
 
         const [localPart, domain] = req.params.paymail.split('@')
-        const txid = await config.receiveTransaction(localPart, domain, hex, reference, metadata)
+        const txid = await config.receiveTransaction(localPart, domain, hex, reference, metadata, req)
 
         if (txid === null) {
           throw new PaymailError('Paymail not found.', HttpStatus.NOT_FOUND, 'not-found')

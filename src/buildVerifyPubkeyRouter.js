@@ -9,7 +9,7 @@ const buildVerifyPubkeyRouter = (config, ifPresent) => {
     router.get('/verifypubkey/:paymail/:pubkey', asyncHandler(async (req, res) => {
       const [name, domain] = req.params.paymail.split('@')
       const pubkey = req.params.pubkey
-      const matchReponse = await config.verifyPublicKeyOwner(name, domain, pubkey)
+      const matchReponse = await config.verifyPublicKeyOwner(name, domain, pubkey, req)
 
       res.send({
         bsvalias: '1.0',

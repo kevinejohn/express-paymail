@@ -22,7 +22,7 @@ const buildP2pPaymentDestinationRouter = (config, ifPresent) => {
         throw new PaymailError('"satoshis" parameter is missing', HttpStatus.BAD_REQUEST, 'missing-satoshis')
       }
 
-      const response = await config.getP2pPaymentDestination(name, domain, satoshis)
+      const response = await config.getP2pPaymentDestination(name, domain, satoshis, req)
       if (response === null) {
         throw new PaymailError(`Paymail not found: ${req.params.paymail}`, HttpStatus.NOT_FOUND, 'not-found')
       }
