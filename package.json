@@ -1,6 +1,6 @@
 {
   "name": "@kevinejohn/express-paymail",
-  "version": "0.38.1",
+  "version": "0.39.0",
   "description": "Paymail Express implementation",
   "main": "lib/index.js",
   "scripts": {
