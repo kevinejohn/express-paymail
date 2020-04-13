@@ -9,7 +9,7 @@ const buildIdentityRouter = (config, ifPresent) => {
 
     router.get('/id/:paymail', asyncHandler(async (req, res) => {
       const [name, domain] = req.params.paymail.split('@')
-      const pubkey = await config.getIdentityKey(name, domain, req,)
+      const pubkey = await config.getIdentityKey(name, domain, req)
 
       if (!pubkey) {
         throw new PaymailError(`Paymail not found: ${req.params.paymail}`, HttpStatus.NOT_FOUND, 'not-found')

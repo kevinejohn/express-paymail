@@ -1,5 +1,5 @@
 {
-  "name": "@moneybutton/express-paymail",
+  "name": "@kevinejohn/express-paymail",
   "version": "0.38.1",
   "description": "Paymail Express implementation",
   "main": "lib/index.js",
